@@ -1,0 +1,154 @@
+/* Frost Studio — light editorial workspace theme.
+   Functional layout, responsive breakpoints and component behavior remain in styles.css. */
+:root {
+  --bg:#f2f6fc;
+  --sidebar:#f7faff;
+  --panel:#ffffff;
+  --panel2:#eef3fd;
+  --border:#d9e3f0;
+  --softborder:#e4eaf4;
+  --text:#1b2c49;
+  --muted:#60728f;
+  --muted2:#8291a7;
+  --blue:#566af1;
+  --blue2:#4656db;
+  --green:#168b7d;
+  --yellow:#a76810;
+  --red:#d55764;
+  color-scheme:light;
+  font-family:Inter,'Segoe UI',ui-sans-serif,system-ui,-apple-system,sans-serif;
+}
+body {background:var(--bg);color:var(--text)}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible {outline-color:#566af1}
+.app-shell {background:#f4f7fd}
+.topbar {
+  background:linear-gradient(112deg,#fff 0%,#fafbff 70%,#f0efff 100%);
+  border-bottom:1px solid #dfe5f1;
+  box-shadow:0 4px 18px #3b527411;
+  height:78px;
+  position:relative;z-index:2;
+}
+.topbar:after {content:'';position:absolute;bottom:-1px;left:0;width:168px;height:2px;background:linear-gradient(90deg,#5269e8,#a17de8)}
+.brand-icon {transform:rotate(-6deg);background:#5b70ec;border:1px solid #465bc6;box-shadow:0 5px 18px #6a79db3b;border-radius:12px}
+.brand-icon span {background:#fff}
+.brand-title{color:#1c2c4d;letter-spacing:.5px;font-weight:820}
+.brand-title b{color:#615ae9}
+.brand-sub {color:#8897b0}
+.dot {color:#9687f4}
+.header-center {color:#7988a4}
+.online-dot {background:#15a596}
+.top-divider {color:#cbd5e7}
+.btn {border-radius:10px}
+.btn:hover:not(:disabled){background:#e7ebff}
+.btn-ghost{color:#394b66;border-color:#dce3f0;background:#fff}
+.btn-ghost:hover:not(:disabled){border-color:#aeb9e7}
+.btn-outline{border:1px dashed #8ea2eb;color:#3f57b9;background:#edf1ff}
+.btn-outline:hover:not(:disabled){background:#e3e9ff}
+.btn-primary{background:linear-gradient(120deg,#546df0,#7c58e5);box-shadow:0 8px 21px #6f75e135;color:#fff}
+.btn-primary:hover:not(:disabled){background:linear-gradient(120deg,#465ce0,#6b49d5)}
+.btn-danger{color:#c04459;border-color:#f1cdd4}
+.main-grid{grid-template-columns:272px minmax(400px,1fr) 355px}
+.sidebar,.inspector{background:#f8faff}
+.sidebar {border-right:1px solid #e1e8f5}
+.section-overline{color:#6f74dc;letter-spacing:1.5px}
+.sidebar h2,.inspector h2{color:#1b2b4b}
+.sidebar p,.inspector-head p,.workspace-head p{color:#70819e}
+.count-pill{color:#5567cc;border-color:#dce3fa;background:#e8ecff}
+.add-btn span{color:#6f84b5}
+.stack-head{color:#95a1b5}
+.empty-stack{border-color:#cad5ed;color:#8292aa;background:#ffffff88}
+.stack-graphic{color:#8496dc}
+.empty-stack b{color:#405677}
+.pack-card{background:#fff;border-color:#dde6f3;box-shadow:0 5px 12px #2b51800c;border-radius:12px}
+.pack-card.drag-target{border-color:#7067e7;box-shadow:0 0 0 2px #766df02d}
+.pack-name{color:#263b60}
+.pack-meta{color:#8797ae}
+.icon-btn{color:#607399;background:#f4f7ff;border:1px solid #dce4f2}
+.icon-btn:hover:not(:disabled){background:#e7edff}
+.pack-toggle,.tiny-check{accent-color:#685eeb}
+.pack-handle{color:#a0adc3}
+.badge{color:#6268d4;background:#eceeff}
+.badge-warn{color:#a46b16;background:#fff0d2}
+.badge-ok{color:#147b65;background:#def8ee}
+.badge-error{color:#b84d65;background:#fff0f0}
+.sidebar-stats{border-color:#e1e8f3}
+.sidebar-stats .num{color:#243958}
+.sidebar-stats .warning-number{color:#bd8028}
+.sidebar-stats small{color:#9aabc1}
+.side-tip{color:#8395ad}
+.side-tip-icon{color:#6777df}
+.workspace{background:#fff}
+.workspace-head{background:linear-gradient(110deg,#fff 30%,#f6f8ff 100%);padding-top:34px;padding-bottom:26px}
+.workspace-head h1{font-size:28px;color:#1a2f50;letter-spacing:-1px}
+.accent-slash{color:#bbc4df}
+.version-tag{border-color:#d8dffc;color:#69799f;background:#f2f3ff}
+.version-tag strong{color:#4e5ecc}
+.version-tag span{color:#7972dc}
+.tabs{border-color:#e4eaf4}
+.tab{color:#8694aa}
+.tab.active{color:#524acc;border-bottom-color:#7464ea}
+.tab span{background:#f0f2fa;color:#798aa4}
+.tab.active span{background:#ebeaff;color:#625bd6}
+.filterbar{background:#fff}
+.search-box{background:#f7f9fd;border:1px solid #dfe7f3}
+.search-box:focus-within{border-color:#8484e8;box-shadow:0 0 0 3px #7d80f11b}
+.search-box>span{color:#7f8dcc}
+.search-box input{color:#1f3454}
+.search-box input::placeholder{color:#9aa8bc}
+.search-box kbd,.kbd-label{border-color:#e3e8f1;color:#95a1b4;background:#fff}
+select{background:#f7f9fd;color:#445a7b;border-color:#dce4f1}
+.list-heading{color:#889bb1}
+.files-list{border-color:#e4ebf4;background:#fff}
+.file-row{color:#273a58;border-color:#edf0f7;min-height:62px}
+.file-row:hover{background:#f5f7ff}
+.file-row.selected{background:#eeefff;box-shadow:inset 3px 0 #7165e9}
+.file-icon{color:#5874c4;background:#e8f0ff}
+.file-icon.shader{color:#8f64c9;background:#f2eaff}
+.file-icon.animation{color:#ad7a2a;background:#fff3dc}
+.file-icon.model{color:#168879;background:#e0f5ef}
+.file-title{color:#284062}
+.file-path{color:#94a4bc}
+.file-source{color:#8497af}
+.status-chip{color:#576bc7;background:#eef1ff}
+.status-chip.conflict{color:#ac711e;background:#fff0d3}
+.status-chip.edited{color:#147c62;background:#dbf7ee}
+.list-footer{border-color:#e7edf6;color:#889bb2;background:#fff}
+.inspector{border-left:1px solid #e0e8f5}
+.inspector-head{border-color:#e2e8f3;background:#f8faff}
+.inspector-content{background:#f8faff}
+.inspector-empty{color:#a0aec3}
+.inspector-graphic{color:#9591e1}
+.inspector-empty h3{color:#667b9a}
+.preview-panel{background:#fff;border:1px solid #dde6f2;box-shadow:0 4px 16px #5273ab0b}
+.preview-top{color:#8899ae}
+.checker{background-color:#fff;background-image:linear-gradient(45deg,#edf0f7 25%,transparent 25%),linear-gradient(-45deg,#edf0f7 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#edf0f7 75%),linear-gradient(-45deg,transparent 75%,#edf0f7 75%)}
+.inspector-section h4{color:#8092ab}
+.property-row{border-color:#e6ecf4;color:#334f70}
+.property-row>span:first-child{color:#8597ac}
+.code-view{background:#f0f3fc;color:#243c60;border-color:#d9e2f2}
+.diagnostic{background:#fff;color:#526b88;border-color:#dfe8f4}
+.diagnostic strong{color:#294263}
+.inspector-note{color:#8396ac}
+.play-bar label{color:#7388a5}
+.play-bar input{accent-color:#645de3}
+.btn-segment button{background:#f0f4fb;color:#53698c;border-color:#d9e2f0}
+.btn-segment button.active{color:#fff;background:#6f65e4;border-color:#6f65e4}
+.file-empty{color:#8295ae}
+.file-empty .empty-icon{color:#a19cef}
+.file-empty h2{color:#29436a}
+.drop-overlay{background:#e9ecffeb;border-color:#847af0}
+.drop-overlay h2{color:#243b61}
+.drop-overlay p{color:#7184a2}
+.drop-icon{color:#6d61e2}
+.toast{color:#2d4765;border-color:#cddaf0;background:#fff;box-shadow:0 10px 30px #32477924}
+.toast.error{color:#ac3e4d;border-color:#f6b9c3;background:#fff4f4}
+.toast.good{color:#0c7563;border-color:#a4e0d1;background:#effdf9}
+.mini-name{color:#8294a9}
+.warning-banner{color:#986319;background:#fff5df;border-color:#f7dfac}
+textarea.code-edit{color:#2d4263;background:#f8faff;border-color:#d9e1ee}
+.theme-btn{min-width:112px;display:flex;gap:8px;align-items:center;justify-content:center;background:#fff;color:#4b5b86;border:1px solid #dce3f0}
+.theme-btn:hover:not(:disabled){background:#f3f3ff}
+.theme-icon{font-size:15px;color:#6d61dc}
+::selection{background:#bfc5ff;color:#23325d}
+@media(max-width:880px){.main-grid{display:flex}.sidebar{border-bottom:1px solid #e5ebf6}.inspector{border-top-color:#e2e8f4}.topbar{height:auto}}
+@media(max-width:530px){.theme-btn{min-width:auto;padding:8px 10px}.theme-label{display:none}.header-actions{justify-content:flex-start}}

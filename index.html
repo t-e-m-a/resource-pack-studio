@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f3f6fc" id="browserThemeColor" />
+  <meta name="description" content="A private, browser-only Minecraft resource pack analyzer, previewer and merge studio." />
+  <title>Resource Pack Studio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="frost.css" id="themeStylesheet" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand"><div class="brand-icon" aria-hidden="true"><span></span><span></span><span></span><span></span></div><div><div class="brand-title">RESOURCE PACK <b>STUDIO</b></div><div class="brand-sub">MINECRAFT JAVA <span class="dot">•</span> 26.3 WORKSPACE</div></div></div>
+      <div class="header-center"><span class="online-dot"></span> PRIVATE · BROWSER ONLY <span class="top-divider">/</span> <span id="packCountTop">NO PACKS LOADED</span></div>
+      <div class="header-actions"><button class="btn theme-btn" id="themeToggle" type="button" title="Switch to dark theme" aria-label="Switch color theme" aria-pressed="false"><span class="theme-icon" id="themeIcon">☾</span><span class="theme-label" id="themeLabel">Dark mode</span></button><button class="btn btn-ghost" id="projectBtn" title="Save project with original pack ZIPs">Save project</button><button class="btn btn-primary" id="exportBtn" disabled><span class="icon">⇩</span> Export ZIP</button></div>
+    </header>
+
+    <main class="main-grid">
+      <aside class="sidebar">
+        <div class="sidebar-top"><div class="section-overline">WORKSPACE</div><h2>Pack stack <span id="packCount" class="count-pill">0</span></h2><p>Top packs override files from packs below.</p></div>
+        <button id="addPackBtn" class="btn btn-outline add-btn">＋ &nbsp; Add resource packs <span>.zip</span></button>
+        <div class="stack-head"><span>HIGHEST PRIORITY</span><span class="arrow-arrow">↑</span></div>
+        <div id="packsList" class="packs-list"><div class="empty-stack"><span class="stack-graphic">▦</span><b>No packs yet</b><p>Add ZIPs or use the sample project to get started.</p></div></div>
+        <div class="stack-head bottom"><span>LOWEST PRIORITY</span><span>↓</span></div>
+        <div class="sidebar-bottom"><div class="sidebar-stats"><div><span class="num" id="statAssets">0</span><small>ASSETS</small></div><div><span class="num warning-number" id="statConflicts">0</span><small>CONFLICTS</small></div><div><span class="num" id="statShaders">0</span><small>SHADERS</small></div></div><div class="side-tip"><span class="side-tip-icon">ⓘ</span><div>Nothing is uploaded to a server. Files stay on your device.</div></div></div>
+      </aside>
+
+      <section class="workspace">
+        <div class="workspace-head"><div><div class="section-overline">FILE EXPLORER <span class="accent-slash">/</span> MERGE WORKSPACE</div><h1>Resource browser</h1><p>Inspect, resolve conflicts, and assemble your final pack.</p></div><div class="version-tag">TARGET <strong>26.3</strong> <span>97.1</span></div></div>
+        <nav class="tabs" aria-label="Workspace sections"><button class="tab active" data-tab="assets">Assets <span id="assetTabCount">0</span></button><button class="tab" data-tab="conflicts">Conflicts <span id="conflictTabCount">0</span></button><button class="tab" data-tab="diagnostics">Diagnostics <span id="diagnosticsTabCount">0</span></button></nav>
+        <div class="filterbar"><label class="search-box"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" autocomplete="off" spellcheck="false" placeholder="Search filenames, paths, pack names..." aria-label="Search assets"/><kbd>/</kbd></label><select id="typeFilter" aria-label="Asset type"><option value="all">All types</option><option value="texture">Textures</option><option value="animation">Animations</option><option value="model">Models</option><option value="shader">Shaders</option><option value="json">JSON</option><option value="other">Other</option></select></div>
+        <div class="list-heading"><span id="listHeading">FILES</span><span id="visibleFiles">0 items</span></div>
+        <div id="filesList" class="files-list"></div>
+        <div class="list-footer"><span id="statusLine">Ready to load resource packs</span><span><span class="kbd-label">LOCAL PROCESSING</span> <span class="mini-green">●</span></span></div>
+      </section>
+
+      <aside class="inspector"><div class="inspector-head"><div class="section-overline">INSPECTOR</div><h2 id="inspectorTitle">Select an asset</h2><p id="inspectorSubtitle">Preview and inspect selected files.</p></div><div id="inspectorBody" class="inspector-content"><div class="inspector-empty"><div class="inspector-graphic">◈</div><h3>Nothing selected</h3><p>Choose an asset on the left to see its details, texture preview, dependencies and source.</p></div></div></aside>
+    </main>
+  </div>
+
+  <div id="dropOverlay" class="drop-overlay" aria-hidden="true"><div><div class="drop-icon">⇪</div><h2>Drop resource packs here</h2><p>ZIP files are processed locally in your browser.</p></div></div>
+  <div id="toastRegion" class="toast-region" aria-live="polite"></div>
+  <input id="zipInput" type="file" accept=".zip,.rps" multiple hidden />
+  <input id="projectInput" type="file" accept=".rps,.zip" hidden />
+  <input id="replaceTextureInput" type="file" accept="image/png" hidden />
+  <script src="vendor/jszip.min.js"></script>
+  <script src="app.js"></script>
+  <script src="theme.js"></script>
+</body>
+</html>
