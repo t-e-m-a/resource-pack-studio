@@ -44,3 +44,6 @@ This archive does not itself publish the site; repository creation and enabling 
 Minecraft Java 26.3 official technical release notes: https://www.minecraft.net/en-us/article/minecraft-java-edition-26-3
 
 JSZip (`vendor/jszip.min.js`): https://stuk.github.io/jszip/ — MIT / GPLv3 dual license. License: `vendor/JSZIP_LICENSE.txt`.
+
+
+This version is fully self-contained: upload index.html to your GitHub repository root. Do not nest it in a folder.
